@@ -1,17 +1,24 @@
 {
   "expo": {
-    "name": "GolfRegelsQuiz",
-    "slug": "GolfRegelsQuiz",
+    "name": "Golfregels Quiz",
+    "slug": "golfregels-quiz",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0d2818",
+    "splash": {
+      "backgroundColor": "#0d2818"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.wernerjanssens.golfregelsquiz",
+      "buildNumber": "1"
     },
     "android": {
+      "package": "com.wernerjanssens.golfregelsquiz",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0d2818",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
