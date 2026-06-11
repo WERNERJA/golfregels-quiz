@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Diagram from '../components/Diagram';
 import { theme } from '../theme';
@@ -14,6 +14,7 @@ export default function QuizScreen({ questions, onFinish, onQuit }: Props) {
   const [index, setIndex] = useState(0);
   const [chosen, setChosen] = useState<number | null>(null);
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
+  const scrollRef = useRef<ScrollView>(null);
 
   const q = questions[index];
   const answered = chosen !== null;
@@ -23,6 +24,8 @@ export default function QuizScreen({ questions, onFinish, onQuit }: Props) {
     if (answered) return;
     setChosen(i);
     setAnswers([...answers, { questionId: q.id, chosenIndex: i, correct: i === q.correctIndex }]);
+    // scroll de uitleg in beeld zodra die gerenderd is
+    setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 150);
   }
 
   function next() {
@@ -31,6 +34,7 @@ export default function QuizScreen({ questions, onFinish, onQuit }: Props) {
     } else {
       setIndex(index + 1);
       setChosen(null);
+      scrollRef.current?.scrollTo({ y: 0, animated: false });
     }
   }
 
@@ -51,7 +55,7 @@ export default function QuizScreen({ questions, onFinish, onQuit }: Props) {
         <View style={[styles.progressFill, { width: `${((index + (answered ? 1 : 0)) / questions.length) * 100}%` }]} />
       </View>
 
-      <ScrollView style={{ flex: 1 }} contentContainerStyle={styles.content}>
+      <ScrollView ref={scrollRef} style={{ flex: 1 }} contentContainerStyle={styles.content}>
         <Text style={styles.ruleTag}>
           Regel {q.rule} — {RULE_TITLES[q.rule]}
         </Text>
