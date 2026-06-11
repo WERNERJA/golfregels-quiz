@@ -10,7 +10,10 @@ export type DiagramId =
   | 'tijdelijk-water-green'
   | 'afslagplaats'
   | 'vlaggenstok'
-  | 'green-bal-raakt-bal';
+  | 'green-bal-raakt-bal'
+  | 'rood-vs-geel'
+  | 'onspeelbaar-struik'
+  | 'pad-volledig-ontwijken';
 
 export interface Question {
   id: string;

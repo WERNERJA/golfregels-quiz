@@ -1082,6 +1082,99 @@ export const QUESTIONS: Question[] = [
     diagram: 'pad-ontwijken',
   },
   {
+    id: 'r17-07',
+    rule: 17,
+    question:
+      'Bal A ligt in een geel gemarkeerde waterpartij, bal B in een rood gemarkeerde. Wat is het verschil in ontwijkopties?',
+    options: [
+      'Geen verschil, de kleur is alleen decoratie',
+      'Bij rood (B) heb je als extra optie zijwaarts ontwijken binnen twee clublengten; bij geel (A) alleen slag en afstand of recht naar achteren',
+      'Bij geel (A) mag je gratis ontwijken, bij rood (B) kost het een strafslag',
+      'Bij rood (B) moet je altijd opnieuw afslaan',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Regel 17.1d: geel geeft twee opties (slag en afstand, of recht naar achteren), rood geeft dezelfde twee plús zijwaarts ontwijken: droppen binnen twee clublengten van het punt waar de bal het laatst de hindernisgrens kruiste, niet dichter bij de hole. Alle opties kosten één strafslag.',
+    diagram: 'rood-vs-geel',
+  },
+  {
+    id: 'r19-05',
+    rule: 19,
+    question:
+      'Je bal ligt onspeelbaar onder een dichte struik. Je kiest de zijwaartse optie (één strafslag). Vanaf welk punt meet je de twee clublengten?',
+    options: [
+      'Vanaf de rand van de struik',
+      'Vanaf de plek waar de bal zelf ligt — ook al is dat midden onder de struik',
+      'Vanaf het dichtstbijzijnde punt zonder belemmering',
+      'Vanaf de plek waar je het beste kunt staan',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Regel 19.2c: het referentiepunt voor zijwaarts ontwijken is de plek van de bal zélf. Je dropt binnen twee clublengten daarvan, niet dichter bij de hole. Let op: ligt de bal diep onder een grote struik, dan kan de hele dropzone nog steeds in de struik liggen — kies dan eventueel een andere optie.',
+    diagram: 'onspeelbaar-struik',
+  },
+  {
+    id: 'r19-06',
+    rule: 19,
+    question:
+      'Onspeelbare bal: je kiest "recht naar achteren" (één strafslag). Op welke lijn moet je droppen?',
+    options: [
+      'De lijn van de hole door de plek van de bal, zo ver naar achteren als je wilt',
+      'De lijn van je vorige slag naar de bal',
+      'Maximaal twee clublengten recht naar achteren',
+      'Een lijn die je zelf mag kiezen, weg van de struik',
+    ],
+    correctIndex: 0,
+    explanation:
+      'Regel 19.2b: je houdt de lijn aan van de hole door de plek waar de bal ligt en gaat op die lijn zo ver naar achteren als je wilt. Daar kies je een punt en drop je binnen één clublengte van dat punt, niet dichter bij de hole.',
+    diagram: 'onspeelbaar-struik',
+  },
+  {
+    id: 'r19-07',
+    rule: 19,
+    question: 'Welke van deze is GEEN toegestane optie bij een onspeelbare bal in het algemene gebied?',
+    options: [
+      'Met één strafslag opnieuw spelen van de plek van je vorige slag',
+      'Met één strafslag recht naar achteren droppen op de lijn hole–bal',
+      'Met één strafslag droppen binnen twee clublengten van de bal, niet dichter bij de hole',
+      'Met één strafslag droppen op de fairway, ter hoogte van waar de bal ligt',
+    ],
+    correctIndex: 3,
+    explanation:
+      '"Naar de fairway ter hoogte van de bal" bestaat níét als optie bij een onspeelbare bal (Regel 19.2). Die verwarring komt door de plaatselijke regel voor een verloren bal of bal buiten de baan (Model Local Rule E-5), waarbij je met twéé strafslagen naar de fairwayrand mag — maar die geldt alleen als de club hem heeft ingevoerd.',
+  },
+  {
+    id: 'r16-08',
+    rule: 16,
+    question:
+      'Je ontwijkt een pad gratis en dropt naast het pad, maar bij het innemen van je stand staan je voeten nog óp het pad. Mag je zo spelen?',
+    options: [
+      'Ja, alleen de bal moet vrij van het pad zijn',
+      'Ja, als het pad je swing niet hindert',
+      'Nee — je moet vollédig ontwijken: ook je stand en swing moeten vrij zijn. De bal ligt buiten de juiste dropzone, dus opnieuw droppen',
+      'Nee, en je krijgt direct twee strafslagen',
+    ],
+    correctIndex: 2,
+    explanation:
+      'Regel 16.1: gratis ontwijken betekent volledige ontwijking — ligging, stand én swing moeten vrij zijn van het pad. Het dichtstbijzijnde punt zonder belemmering houdt daar al rekening mee. Sta je na de drop nog op het pad, dan lag de bal niet in de juiste dropzone: zonder straf opnieuw droppen. Speel je tóch, dan is dat spelen van een verkeerde plaats (algemene straf).',
+    diagram: 'pad-volledig-ontwijken',
+  },
+  {
+    id: 'r16-09',
+    rule: 16,
+    question:
+      'Je bal ligt midden op een pad. Links van het pad is hoge rough, rechts mooie fairway. Het dichtstbijzijnde punt zonder belemmering ligt nét links, in de rough. Waar moet je droppen?',
+    options: [
+      'Rechts op de fairway — je mag de kant kiezen',
+      'Links in de rough — het dichtstbijzijnde punt bepaalt de kant, ook al is dat de slechtste',
+      'Aan de kant van de hole',
+      'Om het even waar binnen twee clublengten van het pad',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Regel 16.1: gratis ontwijken gebeurt altijd vanaf hét dichtstbijzijnde punt zonder belemmering — niet het gunstigste punt. Ligt dat punt in de rough, dan drop je binnen één clublengte dáárvan (niet dichter bij de hole). Wil je dat niet, dan mag je de bal ook gewoon spelen zoals hij ligt, of hem onspeelbaar verklaren (met strafslag).',
+  },
+  {
     id: 'r18-07',
     rule: 18,
     question:
