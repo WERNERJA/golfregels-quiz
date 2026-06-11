@@ -44,7 +44,7 @@ export default function HomeScreen({ problemCount, runCount, onStart, onHistory 
         label="Probleemvragen herhalen"
         sub={
           problemCount > 0
-            ? `${problemCount} vraag${problemCount === 1 ? '' : 'en'} die je eerder fout had`
+            ? `${problemCount} ${problemCount === 1 ? 'vraag' : 'vragen'} die je eerder fout had`
             : 'Nog geen foute antwoorden — goed bezig!'
         }
         disabled={problemCount === 0}
