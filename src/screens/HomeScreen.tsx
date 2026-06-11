@@ -18,8 +18,9 @@ export default function HomeScreen({ problemCount, runCount, onStart, onHistory 
       <Text style={styles.flag}>⛳️</Text>
       <Text style={styles.title}>Golfregels Quiz</Text>
       <Text style={styles.subtitle}>
-        Multiple choice op basis van de officiële Rules of Golf (R&A) — {QUESTIONS.length} vragen
+        Multiple choice op basis van de officiële Rules of Golf (R&A)
       </Text>
+      <Text style={styles.questionCount}>{QUESTIONS.length} vragen</Text>
 
       <MenuButton
         emoji="🏌️"
@@ -95,7 +96,15 @@ const styles = StyleSheet.create({
   content: { padding: 20, paddingTop: 30, paddingBottom: 40 },
   flag: { fontSize: 54, textAlign: 'center' },
   title: { fontSize: 30, fontWeight: '800', color: theme.text, textAlign: 'center', marginTop: 6 },
-  subtitle: { fontSize: 14, color: theme.textDim, textAlign: 'center', marginTop: 8, marginBottom: 26 },
+  subtitle: { fontSize: 14, color: theme.textDim, textAlign: 'center', marginTop: 8 },
+  questionCount: {
+    fontSize: 14,
+    color: theme.accent,
+    fontWeight: '700',
+    textAlign: 'center',
+    marginTop: 6,
+    marginBottom: 26,
+  },
   button: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -93,13 +93,15 @@ export default function QuizScreen({ questions, onFinish, onQuit }: Props) {
             <Text style={styles.explainText}>{q.explanation}</Text>
           </View>
         ) : null}
+      </ScrollView>
 
-        {answered ? (
+      {answered ? (
+        <View style={styles.footer}>
           <Pressable style={({ pressed }) => [styles.nextButton, pressed && { opacity: 0.8 }]} onPress={next}>
             <Text style={styles.nextLabel}>{isLast ? 'Bekijk resultaat' : 'Volgende vraag →'}</Text>
           </Pressable>
-        ) : null}
-      </ScrollView>
+        </View>
+      ) : null}
     </View>
   );
 }
@@ -161,12 +163,19 @@ const styles = StyleSheet.create({
   },
   explainTitle: { color: theme.text, fontSize: 16, fontWeight: '800', marginBottom: 6 },
   explainText: { color: theme.text, fontSize: 14.5, lineHeight: 22 },
+  footer: {
+    paddingHorizontal: 20,
+    paddingTop: 10,
+    paddingBottom: 6,
+    backgroundColor: theme.bg,
+    borderTopWidth: 1,
+    borderTopColor: theme.border,
+  },
   nextButton: {
     backgroundColor: theme.accent,
     borderRadius: 14,
     padding: 16,
     alignItems: 'center',
-    marginTop: 16,
   },
   nextLabel: { color: '#0d2818', fontSize: 16, fontWeight: '800' },
 });

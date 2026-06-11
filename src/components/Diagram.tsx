@@ -325,7 +325,7 @@ function diagramContent(id: DiagramId): React.ReactNode {
 
 export default function Diagram({ id }: { id: DiagramId }) {
   return (
-    <View style={{ borderRadius: 12, overflow: 'hidden', marginVertical: 10 }}>
+    <View pointerEvents="none" style={{ borderRadius: 12, overflow: 'hidden', marginVertical: 10 }}>
       <Base>{diagramContent(id)}</Base>
     </View>
   );
