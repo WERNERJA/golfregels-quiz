@@ -119,8 +119,6 @@ function diagramContent(id: DiagramId): React.ReactNode {
           {/* kruisingspunt en zijwaartse dropzone */}
           <Circle cx={193} cy={95} r={4} fill={C.red} />
           <Label x={203} y={86}>kruisingspunt X</Label>
-          <Path d="M 193 95 A 28 28 0 0 1 221 123" stroke={C.arrow} strokeWidth={2} fill="none" strokeDasharray="4,3" />
-          <Label x={206} y={140}>2 clublengten</Label>
           <Arrow x1={50} y1={70} x2={150} y2={100} dashed />
           <Ball x={45} y={68} label="vorige slag" />
         </G>
@@ -132,8 +130,7 @@ function diagramContent(id: DiagramId): React.ReactNode {
           <Ball x={168} y={110} />
           <Label x={146} y={205}>gele hindernis</Label>
           <Circle cx={193} cy={95} r={4} fill="#b29500" />
-          <Arrow x1={193} y1={95} x2={120} y2={48} dashed />
-          <Label x={60} y={42}>recht naar achteren</Label>
+          <Label x={203} y={86}>kruisingspunt X</Label>
           <Ball x={45} y={150} label="vorige slag" />
         </G>
       );
@@ -150,7 +147,7 @@ function diagramContent(id: DiagramId): React.ReactNode {
           <Label x={120} y={20}>baan</Label>
           <Ball x={228} y={70} label="A" />
           <Ball x={247} y={140} label="B" />
-          <Label x={20} y={205}>A: deel op de baan = in het spel. B: geheel buiten = OB</Label>
+          <Label x={20} y={205}>twee ballen bij de grens (witte palen)</Label>
         </G>
       );
     case 'pad-ontwijken':
@@ -160,10 +157,9 @@ function diagramContent(id: DiagramId): React.ReactNode {
           <Path d="M 120 0 L 165 0 L 185 220 L 140 220 Z" fill="#bdbdbd" stroke="#8d8d8d" strokeWidth={2} />
           <Label x={132} y={115}>pad</Label>
           <Ball x={196} y={120} />
-          <Circle cx={222} cy={118} r={4} fill={C.arrow} />
-          <Label x={205} y={100}>dichtstbijzijnde punt</Label>
-          <Path d="M 222 118 A 30 30 0 0 1 252 148" stroke={C.arrow} strokeWidth={2} fill="none" strokeDasharray="4,3" />
-          <Label x={232} y={168}>+ 1 clublengte</Label>
+          <Ellipse cx={172} cy={112} rx={5} ry={8} fill="#1565c0" />
+          <Ellipse cx={172} cy={132} rx={5} ry={8} fill="#1565c0" />
+          <Label x={195} y={150}>stand op het pad</Label>
           <Ellipse cx={60} cy={40} rx={40} ry={30} fill={C.green} />
           <Flag x={60} y={40} />
         </G>
@@ -177,10 +173,7 @@ function diagramContent(id: DiagramId): React.ReactNode {
           <Ball x={150} y={130} />
           <Ellipse cx={262} cy={50} rx={42} ry={32} fill={C.green} />
           <Flag x={262} y={50} />
-          <Arrow x1={150} y1={130} x2={88} y2={196} dashed />
-          <Label x={14} y={212}>buiten de bunker: +2 strafslagen</Label>
-          <Arrow x1={150} y1={130} x2={122} y2={152} />
-          <Label x={30} y={120}>in de bunker: +1</Label>
+          <Label x={90} y={208}>bal onspeelbaar in de bunker</Label>
         </G>
       );
     case 'provisionele-bal':
@@ -193,7 +186,6 @@ function diagramContent(id: DiagramId): React.ReactNode {
           <Ball x={150} y={120} label="provisioneel" />
           <Ball x={30} y={110} label="tee" />
           <Arrow x1={38} y1={106} x2={240} y2={96} dashed />
-          <Label x={20} y={205}>Origineel gevonden binnen 3 min? Dan daarmee verder.</Label>
         </G>
       );
     case 'recht-naar-achteren':
@@ -202,9 +194,8 @@ function diagramContent(id: DiagramId): React.ReactNode {
           <PenaltyArea color={C.red} />
           <Circle cx={193} cy={95} r={4} fill={C.red} />
           <Label x={203} y={88}>kruisingspunt</Label>
-          <Line x1={272} y1={105} x2={60} y2={180} stroke={C.arrow} strokeWidth={2} strokeDasharray="6,4" />
-          <Ball x={95} y={168} label="drop op de lijn" />
-          <Label x={16} y={205}>lijn: hole → kruisingspunt → onbeperkt naar achteren</Label>
+          <Ball x={168} y={110} />
+          <Label x={40} y={205}>je kiest: recht naar achteren ontwijken</Label>
         </G>
       );
     case 'ingebedde-bal':
@@ -217,8 +208,7 @@ function diagramContent(id: DiagramId): React.ReactNode {
           <Path d="M 140 88 Q 160 60 180 88" fill="#5d4037" />
           <Circle cx={160} cy={86} r={11} fill={C.ball} stroke="#333" strokeWidth={1} />
           <Label x={120} y={175}>bal in eigen pitchmark</Label>
-          <Label x={60} y={45}>zijaanzicht — ingebed in het algemene gebied</Label>
-          <Label x={70} y={200}>gratis: drop binnen 1 clublengte erachter</Label>
+          <Label x={60} y={45}>zijaanzicht — fairway (algemene gebied)</Label>
         </G>
       );
     case 'tijdelijk-water-green':
@@ -231,8 +221,7 @@ function diagramContent(id: DiagramId): React.ReactNode {
           <Ellipse cx={160} cy={115} rx={38} ry={22} fill={C.water} opacity={0.85} />
           <Label x={132} y={118}>plas</Label>
           <Line x1={85} y1={129} x2={228} y2={98} stroke="#666" strokeWidth={1.5} strokeDasharray="4,3" />
-          <Arrow x1={80} y1={130} x2={70} y2={172} />
-          <Label x={30} y={192}>plaatsen op dichtstbijzijnde punt</Label>
+          <Label x={60} y={192}>plas op je speellijn, alles op de green</Label>
         </G>
       );
     case 'afslagplaats':
@@ -243,11 +232,9 @@ function diagramContent(id: DiagramId): React.ReactNode {
           <Circle cx={100} cy={70} r={7} fill="#fdd835" stroke="#444" strokeWidth={1} />
           <Circle cx={220} cy={70} r={7} fill="#fdd835" stroke="#444" strokeWidth={1} />
           <Label x={104} y={58}>tee-markers</Label>
-          <Arrow x1={245} y1={70} x2={245} y2={150} />
-          <Label x={252} y={114}>2 clublengten diep</Label>
-          <Ball x={150} y={100} label="bal binnen" />
+          <Ball x={150} y={100} label="bal" />
           <Circle cx={150} cy={160} r={8} fill="#1565c0" />
-          <Label x={162} y={165}>speler mag erbuiten staan</Label>
+          <Label x={162} y={165}>speler</Label>
         </G>
       );
     case 'vlaggenstok':
@@ -263,7 +250,7 @@ function diagramContent(id: DiagramId): React.ReactNode {
           <Circle cx={147} cy={130} r={13} fill={C.ball} stroke="#333" strokeWidth={1} />
           <Line x1={0} y1={120} x2={320} y2={120} stroke="#1b5e20" strokeWidth={1.5} strokeDasharray="5,4" />
           <Label x={10} y={105}>oppervlak van de green</Label>
-          <Label x={30} y={205}>deel van de bal onder het oppervlak = uitgeholed</Label>
+          <Label x={60} y={205}>zijaanzicht — bal rust tegen de vlaggenstok</Label>
         </G>
       );
     case 'green-bal-raakt-bal':
@@ -275,7 +262,7 @@ function diagramContent(id: DiagramId): React.ReactNode {
           <Ball x={70} y={140} label="jouw putt" />
           <Ball x={170} y={115} label="bal medespeler" />
           <Arrow x1={78} y1={137} x2={160} y2={118} />
-          <Label x={40} y={205}>beide ballen op de green → 2 strafslagen</Label>
+          <Label x={70} y={205}>beide ballen liggen op de green</Label>
         </G>
       );
   }
