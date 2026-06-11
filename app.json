@@ -13,7 +13,10 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.wernerjanssens.golfregelsquiz",
-      "buildNumber": "1"
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "package": "com.wernerjanssens.golfregelsquiz",
@@ -27,6 +30,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "dd88dd86-d025-4558-addd-8c6ef42aaac4"
+      }
     }
   }
 }
