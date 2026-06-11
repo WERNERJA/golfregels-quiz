@@ -24,13 +24,13 @@ export default function HomeScreen({ problemCount, runCount, onStart, onHistory 
 
       <MenuButton
         emoji="🏌️"
-        label="Quiz — 10 vragen"
+        label="Quiz - 10 vragen"
         sub="Willekeurige selectie uit alle regels"
         onPress={() => onStart('random10')}
       />
       <MenuButton
         emoji="🏆"
-        label="Grote quiz — 25 vragen"
+        label="Grote quiz - 25 vragen"
         sub="Voor wie het écht wil weten"
         onPress={() => onStart('random25')}
       />

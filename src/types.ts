@@ -70,8 +70,8 @@ export const RULE_TITLES: Record<number, string> = {
 };
 
 export const MODE_LABELS: Record<QuizMode, string> = {
-  random10: 'Quiz — 10 vragen',
-  random25: 'Grote quiz — 25 vragen',
+  random10: 'Quiz - 10 vragen',
+  random25: 'Grote quiz - 25 vragen',
   problems: 'Probleemvragen herhalen',
   diagrams: 'Vragen met tekening',
 };
