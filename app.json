@@ -15,7 +15,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.wernerjanssens.golfregelsquiz",
-      "buildNumber": "1",
+      "buildNumber": "9",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }

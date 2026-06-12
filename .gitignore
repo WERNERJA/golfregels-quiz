@@ -37,8 +37,11 @@ yarn-error.*
 *.tsbuildinfo
 
 # generated native folders
-/ios
+# (ios wordt gecommit voor Xcode Cloud, maar zonder Pods en build-output)
 /android
+/ios/Pods/
+/ios/build/
+/ios/DerivedData/
 
 # EAS build-artefacten
 *.ipa
