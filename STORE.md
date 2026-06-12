@@ -48,4 +48,4 @@ Primair: Sport — Secundair: Onderwijs
 "Worden er gegevens verzameld?" → **Nee, er worden geen gegevens verzameld**
 
 ## Prijs
-Gratis (of vanaf €0,29 — Paid Apps Agreement + bankgegevens vereist)
+    Gratis (of vanaf €0,29 — Paid Apps Agreement + bankgegevens vereist)
